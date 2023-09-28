@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Regras do Jogo</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #cca0ff;
+        }
+        table {
+            width: 80%;
+            margin: 0 auto;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Regras do Jogo:</h1>
+        <p>Bem-vindo, <span id="nomeJogador"></span>!</p> <br>
+        Bom, você já sorteou a letra, <br>
+        agora conforme as colunas de acordo com<br>
+        a letra sorteada preencha as colunas <br>
+        conforme a primeira letra da palavra;</p>
+
+        <h2>Colunas:</h2>
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>CEP</th>
+                <th>MSÉ</th>
+                <th>MNÉ</th> 
+            </tr>
+            <tr>
+                <td><input type="text" id="nomeInput"></td>
+                <td><input type="text" id="cepInput"></td>
+                <td><input type="text" id="sograInput"></td>
+                <td><input type="text" id="namoradInput"></td> 
+            </tr>
+            <tr>
+                <th>Carro</th>
+                <th>Fruta</th>
+                <th>Cor</th>
+                <th>Verbo</th>
+            </tr>
+            <tr>
+                <td><input type="text" id="carroInput"></td>
+                <td><input type="text" id="frutaInput"></td>
+                <td><input type="text" id="corInput"></td>
+                <td><input type="text" id="verboInput"></td>
+            </tr>
+        </table>
+    </center>
+    <script>
+        function sortearLetra() {
+            // Código para sortear a letra
+
+            // Resgata o nome do jogador da sessão (substitua "nomeDoJogador" pelo método correto de resgatar da sessão)
+            const nomeDoJogador = sessionStorage.getItem('nomeDoJogador');
+
+            // Verifica se o nome do jogador foi resgatado com sucesso
+            if (nomeDoJogador) {
+                // Redireciona o jogador para a página de regras, passando o nome como parâmetro na URL
+                window.location.href = `regras.html?nome=${nomeDoJogador}`;
+            } else {
+                alert("Por favor, faça o login primeiro."); // Adicione um tratamento para quando o nome do jogador não estiver disponível
+            }
+        }
+    </script>
+</body>
+</html>
